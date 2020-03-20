@@ -8,7 +8,7 @@ function App() {
     <div className="container App">
       <main className="main">
         <h1 className="display-3 mt-5">Daily Twelve</h1>
-        <p className="lead">Coming Soon! What you do in the first few minutes of the day can help your day be great!</p>
+        <p className="lead">Coming Soon! Set aside a few minutes of your day to recharge.</p>
       </main>
       <Weather />
     </div>
