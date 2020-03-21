@@ -31,7 +31,7 @@ Finally, the Weather for day. The background image is pulled from an API to refl
 - Weather *Image to reflect the weather. Example 80 degrees shows a sunshine image
 
 ----- UI
-- Preview.html - initial design
+- dailyTwelvePreview.jpg - initial design
 - Home Page containts greeting, encouraging Bible verse, gratitude thoughts, to do list, daily weather.
 - Greeting examples: "Name, you're doing awesome!", "You got this, Name!", "Have a great day, Name!"
 - Encouraging Bible verse that changes each time the app is loaded/refreshed

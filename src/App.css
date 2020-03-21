@@ -41,6 +41,28 @@
   color: white;   
  }
 
+ .gratitude-form {
+  background-color: #73d1c0;
+  color: white;  
+  margin-bottom: 0em; 
+ }
+
+ .priorities-form {
+  background-color: #f3f7fc;
+  color: rgb(70, 70, 70);  
+  margin-bottom: 0em; 
+ }
+
+ .form-area {
+   width: 70%;
+   margin-left: auto;
+   margin-right: auto;
+ }
+
+ .btn-secondary {
+   margin-top: 1em;
+ }
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

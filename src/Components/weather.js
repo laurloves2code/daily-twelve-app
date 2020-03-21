@@ -2,7 +2,7 @@ import React from 'react';
 import '../App.css';
 import sunshine from '../img/sunshine.png';
 
-const weather = () => {
+const Weather = () => {
     return ( 
         <div className="weather-bkg">
            <h1 className="py-4">Louisville</h1>
@@ -12,4 +12,4 @@ const weather = () => {
     );
 }
 
-export default weather;
+export default Weather;
