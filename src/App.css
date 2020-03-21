@@ -34,8 +34,11 @@
 }
 
 .weather-bkg {
-  background-image: url("/img/sunshine.bkg");
-  background-position: 0px;  
+  background-image: url("./img/sunshine_bkg.jpg");
+  background-repeat: no-repeat;  
+  background-position: center; 
+  background-size: 100% auto;
+  color: white;   
  }
 
 @keyframes App-logo-spin {
