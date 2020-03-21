@@ -33,6 +33,11 @@
   color: #61dafb;
 }
 
+.weather-bkg {
+  background-image: url("/img/sunshine.bkg");
+  background-position: 0px;  
+ }
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
