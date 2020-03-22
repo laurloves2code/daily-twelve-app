@@ -11,3 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.pageroot {  
+  background-image: url("./img/calm.jpg");
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+}
