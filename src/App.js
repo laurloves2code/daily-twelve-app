@@ -11,7 +11,7 @@ function App() {
     <div className="container App">
       <main className="main">
         <h1 className="display-4 mt-3">Daily Twelve</h1>
-        <p className="lead">Coming Soon! Set aside a few minutes of your day to recharge.</p>
+        <p className="lead">Tuesday, March 25, 2020</p>
       </main>
       <Verse />
       <Gratitude />
