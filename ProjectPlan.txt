@@ -48,7 +48,7 @@ Finally, the Weather for day. The background image is pulled from an API to refl
          - Answer these questions: How will it work? What are the features and how do they work together? 
            How will the user interact with the App? What APIs will be used?
 * Week 3 - APIs Confirmed. Finalize Design and Router pages. Create mock API data. Continue Learning Bootstrap. Git Commits.
-- Week 4 - Weather API, search zip code, user location
+* Week 4 - Weather API, (possibly - search zip code, user location)
 - Week 5 - Image API to interact with Weather API data
 - Week 6 - Learn HTML5 Local Storage - Priority List, Quote, User Greeting
 - Week 7 - Work out any bugs
