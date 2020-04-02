@@ -34,7 +34,8 @@
 }
 
 .weather-bkg {
-  background-image: url("./img/sunshine_bkg.jpg");
+  background-image: linear-gradient(to bottom right, rgb(124, 60, 152), rgb(39, 27, 107));
+  /* background-image: url("./img/sunshine_bkg.jpg"); */
   background-repeat: no-repeat;  
   background-position: center; 
   background-size: 100% auto;
@@ -61,6 +62,10 @@
 
  .btn-secondary {
    margin-top: 1em;
+ }
+
+ .realFeel {
+   padding-bottom: 1em;
  }
 
 @keyframes App-logo-spin {
