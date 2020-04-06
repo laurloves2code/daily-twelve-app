@@ -3,7 +3,7 @@ import './App.css';
 import Verse from './Components/Verse.js';
 import Gratitude from './Components/Gratitude.js';
 import Priorities from './Components/Priorities.js';
-import Weather from './Components/Weather.js';
+//import Weather from './Components/Weather.js';
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
       <Verse />
       <Gratitude />
       <Priorities />
-      <Weather />
+      {/* <Weather /> */}
     </div>
 
     

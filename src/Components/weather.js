@@ -24,7 +24,7 @@ class Weather extends Component {
     // testing api - will save apikey in another hidden document
 
     apiWeather = async (
-        url = `http://api.openweathermap.org/data/2.5/weather?q=Louisville&appid={enter}`
+        url = `http://api.openweathermap.org/data/2.5/weather?q=Louisville&appid={enterapi}`
     ) => {        
         const results = await fetch(url);
         const info = await results.json();
