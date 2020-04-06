@@ -12,6 +12,7 @@ class Weather extends Component {
         skyicon: '',
         tempnow: '',
         outside: '',
+        look: '',
         realFeel: ''
     };
 
@@ -23,13 +24,14 @@ class Weather extends Component {
     // testing api - will save apikey in another hidden document
 
     apiWeather = async (
-        url = `http://api.openweathermap.org/data/2.5/weather?q=Louisville&appid={enterapi}`
+        url = `http://api.openweathermap.org/data/2.5/weather?q=Louisville&appid=260ca90a45d454027837f0c496e276fa`
     ) => {        
         const results = await fetch(url);
         const info = await results.json();
         this.toFahrenheit(info.main.temp, info.main.feels_like);        
         this.setState({location: info.name});
         this.setState({outside: info.weather[0].main});
+        this.setState({look: info.weather[0].description});
         this.setSkyicon();        
         console.log(info);
         console.log(this.state.location);
@@ -49,7 +51,7 @@ class Weather extends Component {
         } else 
         // if (this.state.outside === "Clear") 
             {
-            console.log("Sky is clear");
+            console.log("Sky is not cloudy");
             this.setState({skyicon: sunshine});
         } 
     };
@@ -58,7 +60,7 @@ class Weather extends Component {
         return (
             <div className="weather-bkg">
             <h1 className="py-4">{this.state.location}</h1>
-            <h4 className="realFeel">{this.state.outside}</h4>
+            <h4 className="realFeel">{this.state.look}</h4>
             <img src={this.state.skyicon} alt="Weather"/>
             {/* <img src="/img/clouds.png" alt="Weather"/> */}
             <h2>{this.state.tempnow}&deg;</h2>
