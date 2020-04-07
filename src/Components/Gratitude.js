@@ -7,6 +7,7 @@ class Gratitude extends Component {
 
     constructor(props) {
         super(props);
+        
         this.state = {
             items: [],
             currentThought:{
@@ -14,6 +15,7 @@ class Gratitude extends Component {
                 key: ''
             }                      
         }
+        
         this.handleInput = this.handleInput.bind(this);
         this.addItem = this.addItem.bind(this);
     }

@@ -13,7 +13,7 @@ code {
 }
 
 .pageroot {  
-  background-image: url("./img/calm.jpg");
+  /* background-image: url("./img/calm.jpg"); */
   background-size: auto 100%;
   background-repeat: no-repeat;
 }

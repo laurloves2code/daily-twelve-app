@@ -10,8 +10,8 @@ class Verse extends Component {
     render () {
         return (
             <div>
-                <h4 className="py-5 px-5">"Be on your guard; stand firm in the faith; be courageous; be strong."</h4>   
-                <p>- 1 Corinthians 16:13 (NIV)</p>       
+                <h4 className="py-5 px-5">"Fear not, for I am with you; be not dismayed, for I am your God; I will strengthen you, I will help you, I will uphold you with my righteous right hand."</h4>   
+                <p>- Isaiah 41:10</p>       
             </div>
         );
     }
