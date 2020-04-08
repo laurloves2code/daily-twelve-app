@@ -3,30 +3,31 @@ import '../App.css';
 
 class Date extends Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            date: 'date'
+        state = {
+            date: ''
         }
-    }
+    
    
 
-    displayDate() {
-        const today = 'This is where the date will display';
-        // const day = today.toDateString();
-        // const time = today.toLocaleTimeString();
+    displayDate = () => {  
+        const today = new Date();
+        // const year = today.getFullYear();
+        console.log(this.state.date);
+        this.setState({date: 'date has been set'});
+        console.log(this.state.date);
         console.log(today);
-        // const day = new Date();
-        // const today = day.toLocaleTimeString();
-        this.setState({date: today});
-    }
+        console.log(this.state.date);
+     };
 
     componentDidMount() {
         this.displayDate();
       }
     
 
-    render () {
+    render () { 
+        
+        
+
         return (
             <div>
                 <h3>{this.state.date}</h3>      
