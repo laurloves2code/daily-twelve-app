@@ -10,12 +10,12 @@ class Date extends Component {
    
 
     displayDate = () => {  
-        const today = new Date();
+        //const today = new Date();
         // const year = today.getFullYear();
         console.log(this.state.date);
-        this.setState({date: 'date has been set'});
+        this.setState({date: new Date().getFullYear()});
         console.log(this.state.date);
-        console.log(today);
+        //console.log(today);
         console.log(this.state.date);
      };
 

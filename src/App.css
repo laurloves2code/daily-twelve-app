@@ -12,6 +12,19 @@
   pointer-events: none;
 }
 
+.quote { 
+  padding-top: 1.5em;
+}
+
+label {
+  margin-bottom: 1.5em;
+}
+
+.they-said-so {
+  color: rgb(161, 161, 161);
+  font-size: .4em;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
