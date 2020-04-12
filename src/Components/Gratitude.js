@@ -11,11 +11,14 @@ class Gratitude extends Component {
     };
 
     
-    updateThought() {
+    async updateThought() {
         console.log(this.state.currentThought);
-        this.setState({currentThought: 'This is the new input'});
+        await this.setState({currentThought: 'This is the new input'});
         console.log(this.state.currentThought);
-    }
+        return this.state.currentThought;
+    };
+
+    
 
     componentDidMount() {
         this.updateThought();        
@@ -23,9 +26,9 @@ class Gratitude extends Component {
 
     
 
-    render () {      
-                
-        return (
+    render () {         
+                        
+        return (            
             <div className="gratitude-form py-5">                
                 <form className="form-area">
                     <div className="form-group">
