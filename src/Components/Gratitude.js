@@ -10,7 +10,7 @@ class Gratitude extends Component {
       
         this.state = {
           savedThoughts: [],  
-          gratValue: ''
+          gratValue: {}
         };
 
         this.handleChange=this.handleChange.bind(this);
@@ -27,14 +27,19 @@ class Gratitude extends Component {
     };
 
     handleChange(event) {
-        this.setState({gratValue: event.target.value});
+        const timeNow = Date();
+        this.setState({gratValue: {
+            date: timeNow,
+            message: event.target.value}});
         }
 
     handleSave(event) {
         //this.setState({gratValue: event.target.value});
         console.log(this.state.gratValue);
         //event.preventDefault();
-        this.setState({gratValue: ''});
+        this.setState({gratValue: {
+            date: '',
+            message: ''}});
       }
     
 
@@ -55,7 +60,7 @@ class Gratitude extends Component {
                             className="form-control" 
                             id="gratitude-message" 
                             rows="4"
-                            value={this.state.gratValue}
+                            value={this.state.gratValue.message}
                             onChange={this.handleChange}>
                         </textarea>
                     </div>

@@ -3,20 +3,25 @@ import '../App.css';
 
 class Date extends Component {
 
-        state = {
-            date: ''
-        }
+    constructor(props) {
+        super(props);
+      
+        this.state = {
+          date: {}
+        };
+
+        this.displayDate=this.displayDate.bind(this);        
+      }
     
    
 
-    displayDate = () => {  
+    async displayDate () {  
         //const today = new Date();
         // const year = today.getFullYear();
-        console.log(this.state.date);
-        this.setState({date: new Date().getFullYear()});
-        console.log(this.state.date);
-        //console.log(today);
-        console.log(this.state.date);
+        const dateToday = new Date();               
+        await this.setState({date: {time: dateToday}});
+        console.log(this.state.date);        
+        //console.log(today);       
      };
 
     componentDidMount() {
@@ -24,13 +29,11 @@ class Date extends Component {
       }
     
 
-    render () { 
+    render () {       
         
-        
-
         return (
             <div>
-                <h3>{this.state.date}</h3>      
+                <h3>Date Now</h3>      
             </div>
         );
     }
