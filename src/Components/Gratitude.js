@@ -5,24 +5,42 @@ import '../App.css';
 
 class Gratitude extends Component {
 
-    state = {
-        savedThoughts: [],
-        currentThought: 'this is the first text'
-    };
+    constructor(props) {
+        super(props);
+      
+        this.state = {
+          savedThoughts: [],  
+          gratValue: ''
+        };
 
-    
-    async updateThought() {
-        console.log(this.state.currentThought);
-        await this.setState({currentThought: 'This is the new input'});
-        console.log(this.state.currentThought);
-        return this.state.currentThought;
-    };
+        this.handleChange=this.handleChange.bind(this);
+        this.handleSave=this.handleSave.bind(this);
 
-    
-
-    componentDidMount() {
-        this.updateThought();        
       }
+    
+       
+    async updateThought() {
+        console.log(this.state.gratValue);
+        await this.setState({gratValue: 'This is the new input'});
+        console.log(this.state.gratValue);
+        return this.state.gratValue;
+    };
+
+    handleChange(event) {
+        this.setState({gratValue: event.target.value});
+        }
+
+    handleSave(event) {
+        //this.setState({gratValue: event.target.value});
+        console.log(this.state.gratValue);
+        //event.preventDefault();
+        this.setState({gratValue: ''});
+      }
+    
+
+    // componentDidMount() {
+    //     this.updateThought();        
+    //   }
 
     
 
@@ -33,9 +51,17 @@ class Gratitude extends Component {
                 <form className="form-area">
                     <div className="form-group">
                         <label htmlFor="gratitude-message">Thoughts of Gratitude</label>
-                        <textarea className="form-control" id="gratitude-message" rows="4"></textarea>
+                        <textarea 
+                            className="form-control" 
+                            id="gratitude-message" 
+                            rows="4"
+                            value={this.state.gratValue}
+                            onChange={this.handleChange}>
+                        </textarea>
                     </div>
-                    <button type="button" className="btn btn-secondary btn-sm ">Save</button>
+                    <button type="button" 
+                        className="btn btn-secondary btn-sm "
+                        onClick={this.handleSave}>Save</button>
                 </form>     
             </div>
         );
