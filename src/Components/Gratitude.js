@@ -35,18 +35,12 @@ class Gratitude extends Component {
 
     handleSave() {
         //this.setState({gratValue: event.target.value});
-        console.log(this.state.gratValue);
-
-        //....................
-        
+        console.log(this.state.gratValue);       
         
         this.state.savedThoughts.unshift(this.state.gratValue);
 
         console.log(this.state.savedThoughts);
 
-        //.....................
-
-        //event.preventDefault();
         this.setState({gratValue: {
             date: '',
             message: ''}});

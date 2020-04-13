@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../App.css';
 import sunshine from '../img/sunshine.png';
 import clouds from '../img/clouds.png';
+import rain from '../img/rain.png'
 //import '../Components/enterapp.js';
 
 class Weather extends Component {
@@ -24,7 +25,7 @@ class Weather extends Component {
     // testing api - will save apikey in another hidden document
 
     apiWeather = async (
-        url = `http://api.openweathermap.org/data/2.5/weather?q=Louisville&appid={enterapi}`
+        url = `http://api.openweathermap.org/data/2.5/weather?q=Louisville&appid=key`
     ) => {        
         const results = await fetch(url);
         const info = await results.json();
@@ -48,7 +49,10 @@ class Weather extends Component {
         if (this.state.outside === "Clouds") {
             console.log("it is cloudy out");
             this.setState({skyicon: clouds});
-        } else 
+        } else if (this.state.outside === "Rain") {
+            console.log("it is rainy");
+            this.setState({skyicon: rain});
+        } else
         // if (this.state.outside === "Clear") 
             {
             console.log("Sky is not cloudy");
