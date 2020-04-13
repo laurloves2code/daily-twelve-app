@@ -5,6 +5,8 @@ import '../App.css';
 
 class Gratitude extends Component {
 
+    userThoughts;
+
     constructor(props) {
         super(props);
       
@@ -46,10 +48,24 @@ class Gratitude extends Component {
             message: ''}});
       }
     
+      componentDidMount() {
+            this.userThoughts = JSON.parse(localStorage.getItem('thought'));
+            
+            if (localStorage.getItem('thought')) {
+                this.setState ({
+                    savedThoughts: this.state.savedThoughts
+                })
+            }            
+        }
 
+      UNSAFE_componentWillUpdate(thought, nextState) {
+            localStorage.setItem(thought, JSON.stringify(nextState));            
+      }
        
 
-    render () {         
+    render () {   
+        
+        
                         
         return (            
             <div className="gratitude-form py-5">                
