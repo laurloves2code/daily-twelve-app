@@ -36,7 +36,7 @@ class Gratitude extends Component {
       }
     }
       
-    componentWillUpdate(gratitudeData, nextThought) {
+    UNSAFE_componentWillUpdate(gratitudeData, nextThought) {
         localStorage.setItem("thoughts", JSON.stringify(nextThought));
       }
     
@@ -62,11 +62,10 @@ class Gratitude extends Component {
 //handleSave() saves the current gratValue state when the Save button is clicked
 // this new data is added to thebeginning of an array of gratValue objects - savedThoughts
 
-    handleSave() {      
-        
-        this.state.savedThoughts.unshift(this.state.gratValue);
+    handleSave() {           
 
-        console.log(this.state.savedThoughts);
+        let thoughtsArray = [...this.state.savedThoughts];
+        thoughtsArray.unshift(this.state.gratValue);
 
 // attempting to display the date in new Gratitude post
 
@@ -76,10 +75,12 @@ class Gratitude extends Component {
 
 // sets the gratValue states back to blank for user
 
-        this.setState({gratValue: {
-            date: '',
-            message: ''}});
-      }   
+        this.setState({
+            savedThoughts: thoughtsArray,
+            gratValue: {
+                date: '',
+                message: ''}});
+        }
     
 
 // displayList() used to test what will be displayed through savedThoughts state
