@@ -62,7 +62,13 @@ class Gratitude extends Component {
 
     handleSave() {           
 
-        let thoughtsArray = [...this.state.savedThoughts];
+        if (this.state.gratValue.message === '') {
+
+            console.log('need input');
+
+        } else {
+
+            let thoughtsArray = [...this.state.savedThoughts];
         thoughtsArray.unshift(this.state.gratValue);
 
 // attempting to display the date in new Gratitude post
@@ -77,8 +83,10 @@ class Gratitude extends Component {
             savedThoughts: thoughtsArray,
             gratValue: {
                 date: '',
-                message: ''}});  
-        }        
+                message: ''}});
+
+        }         
+    }    
 
        
 
@@ -98,22 +106,7 @@ class Gratitude extends Component {
             <div className="gratitude-form py-5">                
                 <form className="form-area">
                     <div className="form-group">
-                        <label htmlFor="gratitude-message">Thoughts of Gratitude</label>
-
-            {/* // Renders list of 3 recently saved gratitude thoughts */}
-                    <div>
-                        <h5>Your Thoughts of Gratitude</h5>
-                        <ul className="ul-Thoughts">
-                        
-                        {thoughtsList}                            
-
-                        </ul>
-                        
-                    
-                    </div>
-                        
-
-
+                        <label htmlFor="gratitude-message">Thoughts of Gratitude</label>           
                         <textarea 
                             className="form-control" 
                             id="gratitude-message" 
@@ -125,8 +118,22 @@ class Gratitude extends Component {
                     <button type="button" 
                         className="btn btn-secondary btn-sm "
                         onClick={this.handleSave}>Save</button>
+
+                    {/* // Renders list of 3 recently saved gratitude thoughts */}
+
+                <div className="your-thoughts">
+                        <h5>Your Thoughts of Gratitude</h5>
+                        <ul className="ul-Thoughts">
                         
-                </form>     
+                        {thoughtsList}                            
+
+                        </ul>
+                        
+                    
+                 </div>
+                        
+                </form>                 
+
             </div>
         );
     }

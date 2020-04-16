@@ -46,6 +46,12 @@ label {
   color: #61dafb;
 }
 
+.versebkg p {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-bottom: 1em;
+}
+
 .weather-bkg {
   background-image: linear-gradient(to bottom right, rgb(124, 60, 152), rgb(39, 27, 107));
   /* background-image: url("./img/sunshine_bkg.jpg"); */
@@ -60,6 +66,14 @@ label {
   color: white;  
   margin-bottom: 0em; 
  }
+
+ .your-thoughts {
+   padding-top: 1.5em;
+ }
+
+ .your-thoughts h5 {
+  padding-bottom: 1.5em;
+}
 
  .ul-Thoughts {
    padding: 0;
