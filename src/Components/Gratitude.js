@@ -5,8 +5,6 @@ import '../App.css';
 
 class Gratitude extends Component {
 
-    //userThoughts;
-
     constructor(props) {
         super(props);
 
@@ -91,6 +89,13 @@ class Gratitude extends Component {
        
 
     render () {   
+
+        const thoughtsList = this.state.savedThoughts.map(
+            (data) =>             
+            <li className="thoughts-list" key={data.message}>{data.date}<p>{data.message}</p></li>
+            );
+
+      
         
         
                         
@@ -102,7 +107,14 @@ class Gratitude extends Component {
 
             {/* // Renders list of 3 recently saved gratitude thoughts */}
                     <div>
-                    <p>{this.userThoughts}</p>
+                        <h5>Your Thoughts of Gratitude</h5>
+                        <ul className="thoughts-list">
+                        
+                        {thoughtsList}                            
+
+                        </ul>
+                        
+                    
                     </div>
                         
 

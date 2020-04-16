@@ -61,6 +61,11 @@ label {
   margin-bottom: 0em; 
  }
 
+ .thoughts-list {
+   padding: .5em;
+   list-style-type: none;
+ }
+
  .priorities-form {
   background-color: #f3f7fc;
   color: rgb(70, 70, 70);  
