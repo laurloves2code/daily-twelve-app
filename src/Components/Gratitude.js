@@ -77,26 +77,21 @@ class Gratitude extends Component {
             savedThoughts: thoughtsArray,
             gratValue: {
                 date: '',
-                message: ''}});
-        }
-    
+                message: ''}});  
+        }        
 
-// displayList() used to test what will be displayed through savedThoughts state
-
-      displayList () {
-        console.log(this.state.savedThoughts);
-    }
        
 
     render () {   
 
-        const thoughtsList = this.state.savedThoughts.map(
+       // maps through savedThoughts array to render
+
+        const thoughtsList = this.state.savedThoughts.slice(0, 3).map(
             (data) =>             
             <li className="thoughts-list" key={data.message}>{data.date}<p>{data.message}</p></li>
-            );
+            );     
 
-      
-        
+            
         
                         
         return (            
@@ -108,7 +103,7 @@ class Gratitude extends Component {
             {/* // Renders list of 3 recently saved gratitude thoughts */}
                     <div>
                         <h5>Your Thoughts of Gratitude</h5>
-                        <ul className="thoughts-list">
+                        <ul className="ul-Thoughts">
                         
                         {thoughtsList}                            
 
@@ -130,6 +125,7 @@ class Gratitude extends Component {
                     <button type="button" 
                         className="btn btn-secondary btn-sm "
                         onClick={this.handleSave}>Save</button>
+                        
                 </form>     
             </div>
         );

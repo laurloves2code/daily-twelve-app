@@ -61,9 +61,18 @@ label {
   margin-bottom: 0em; 
  }
 
+ .ul-Thoughts {
+   padding: 0;
+ }
+
  .thoughts-list {
-   padding: .5em;
-   list-style-type: none;
+  padding: .75em;
+  list-style-type: none;
+  text-align: left;
+  background-color: aliceblue;
+  color: #777777;
+  margin-bottom: 1em;
+  border-radius: 15px;
  }
 
  .priorities-form {
