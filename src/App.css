@@ -95,6 +95,16 @@ label {
   margin-bottom: 0em; 
  }
 
+ .priorities-list {
+  padding: .75em;
+  list-style-type: none;
+  text-align: left;
+  background-color: #8f4f8f;
+  color: whitesmoke;
+  margin-bottom: 1em;
+  border-radius: 15px; 
+ }
+
  .form-area {
    width: 70%;
    margin-left: auto;
