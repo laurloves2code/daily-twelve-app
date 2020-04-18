@@ -9,7 +9,7 @@ PROJECT PLAN
 App Name: Daily Twelve
 Taking 12 minutes at some point throughout the day to reflect can be refreshing and set the tone for the rest of the day.
 It will only take about 12 minutes to use this app daily.
-With this app, the user is greeted and encouraged with a Bible Verse.
+With this app, the user is greeted and encouraged with a motivational quote.
 Continue scrolling and the user is prompted to input thoughts of gratitude and three priority items to do for the day.
 Finally, the Weather for day. The background image is pulled from an API to reflect the weather.
 

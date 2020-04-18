@@ -3,6 +3,7 @@ import '../App.css';
 import sunshine from '../img/sunshine.png';
 import clouds from '../img/clouds.png';
 import rain from '../img/rain.png'
+//import Background from './Components/Background.js';
 //import '../Components/enterapp.js';
 
 class Weather extends Component {
@@ -14,18 +15,20 @@ class Weather extends Component {
         tempnow: '',
         outside: '',
         look: '',
-        realFeel: ''
+        realFeel: '',
+        bkgImage: ''
     };
 
     componentDidMount() {
-        this.apiWeather();        
+        this.apiWeather();   
+        this.apiPhoto();     
       }
 
     // api data from https://openweathermap.org
     // testing api - will save apikey in another hidden document
 
     apiWeather = async (
-        url = `http://api.openweathermap.org/data/2.5/weather?q=Louisville&appid=key`
+        url = `weatherapi`
     ) => {        
         const results = await fetch(url);
         const info = await results.json();
@@ -36,6 +39,15 @@ class Weather extends Component {
         this.setSkyicon();        
         console.log(info);
         console.log(this.state.location);
+    };
+
+    apiPhoto = async (
+        urlb = `pixabayapi`
+    ) => {        
+        const results = await fetch(urlb);
+        const infob = await results.json(); 
+        //const indexB = Math.floor(Math.random() * 40);               
+        console.log(infob.hits[10].webformatURL);        
     };
 
     toFahrenheit = (number, realnumber) => {
@@ -62,7 +74,7 @@ class Weather extends Component {
 
     render () {
         return (
-            <div className="weather-bkg">
+            <div className="weather-bkg bkgApp" >
             <h1 className="py-4">{this.state.location}</h1>
             <h4 className="realFeel">{this.state.look}</h4>
             <img src={this.state.skyicon} alt="Weather"/>

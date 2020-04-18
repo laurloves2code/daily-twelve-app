@@ -1,5 +1,11 @@
+.pageroot {
+  background: #efefef;
+}
+
 .App {
   text-align: center;
+  padding-left: 100px;
+  padding-right: 100px;  
 }
 
 .main {
@@ -46,20 +52,32 @@ label {
   color: #61dafb;
 }
 
+.versebkg {
+  padding-right: 30px;
+  padding-left: 30px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
 .versebkg p {
   margin-top: 0;
   margin-bottom: 0;
-  padding-bottom: 1em;
+  padding-bottom: 1em; 
 }
 
 .weather-bkg {
-  background-image: linear-gradient(to bottom right, rgb(124, 60, 152), rgb(39, 27, 107));
-  /* background-image: url("./img/sunshine_bkg.jpg"); */
+  /* background-image: linear-gradient(to bottom right, rgb(124, 60, 152, .5), rgb(39, 27, 107, .5)); */
+  background-image: url("https://pixabay.com/get/5ee4d3444f4faa0df7c5d57cc1283e7a173dd8f85254794e742873d49349_640.jpg");
   background-repeat: no-repeat;  
   background-position: center; 
   background-size: 100% auto;
   color: white;   
  }
+
+ .bkgApp {  
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 
  .gratitude-form {
   background-color: #73d1c0;
