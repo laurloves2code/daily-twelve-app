@@ -16,7 +16,7 @@ class Weather extends Component {
         outside: '',
         look: '',
         realFeel: '',
-        bkgImage: ''
+        bkgImage: {}
     };
 
     componentDidMount() {
@@ -42,12 +42,14 @@ class Weather extends Component {
     };
 
     apiPhoto = async (
-        urlb = `pixabayapi`
+        urlb = `https://pixabay.com/api/?key=16094226-1e7dd4150d1a0d4d8c4708596&q=calm+sunshine&image_type=photo`
     ) => {        
         const results = await fetch(urlb);
         const infob = await results.json(); 
         //const indexB = Math.floor(Math.random() * 40);               
-        console.log(infob.hits[10].webformatURL);        
+        const urlbkg = infob.hits[10].webformatURL;          
+        console.log(urlbkg);
+        this.setState({bkgImage: {backgroundImage: "url(" + urlbkg + ")"}});     
     };
 
     toFahrenheit = (number, realnumber) => {
@@ -74,7 +76,7 @@ class Weather extends Component {
 
     render () {
         return (
-            <div className="weather-bkg bkgApp" >
+            <div className="weather-bkg bkgApp" style={this.state.bkgImage}>
             <h1 className="py-4">{this.state.location}</h1>
             <h4 className="realFeel">{this.state.look}</h4>
             <img src={this.state.skyicon} alt="Weather"/>

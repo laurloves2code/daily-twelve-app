@@ -66,7 +66,7 @@ label {
 
 .weather-bkg {
   /* background-image: linear-gradient(to bottom right, rgb(124, 60, 152, .5), rgb(39, 27, 107, .5)); */
-  background-image: url("https://pixabay.com/get/5ee4d3444f4faa0df7c5d57cc1283e7a173dd8f85254794e742873d49349_640.jpg");
+  /* background-image: url("https://pixabay.com/get/5ee4d3444f4faa0df7c5d57cc1283e7a173dd8f85254794e742873d49349_640.jpg"); */
   background-repeat: no-repeat;  
   background-position: center; 
   background-size: 100% auto;
