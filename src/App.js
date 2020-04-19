@@ -4,7 +4,7 @@ import Quote from './Components/Quote.js';
 import Gratitude from './Components/Gratitude.js';
 import Priorities from './Components/Priorities.js';
 import Date from './Components/Date.js';
-//import Background from './Components/Background.js';
+import Footer from './Components/Footer.js';
 import Weather from './Components/Weather.js';
 
 function App() {
@@ -21,6 +21,7 @@ function App() {
           <Gratitude />      
           <Priorities />
           <Weather />
+          <Footer />
     </div>
     
   );

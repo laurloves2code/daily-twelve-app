@@ -8,6 +8,14 @@
   padding-right: 100px;  
 }
 
+#done {
+  text-decoration: line-through;
+}
+
+#complete {
+  display: none;
+}
+
 .main {
   padding: 1em 4em 3em 3em;  
   background-color: #61dafb;
@@ -29,6 +37,17 @@ label {
 .they-said-so {
   color: rgb(161, 161, 161);
   font-size: .4em;
+}
+
+.btn {
+  max-height: 35px;
+}
+
+.footerDiv {
+  background-color: #61dafb;
+  text-align: center;
+  padding-left: 100px;
+  padding-right: 100px;  
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -121,6 +140,8 @@ label {
   color: whitesmoke;
   margin-bottom: 1em;
   border-radius: 15px; 
+  display: flex;
+  justify-content: space-between;
  }
 
  .form-area {
@@ -135,6 +156,7 @@ label {
 
  .realFeel {
    padding-bottom: 1em;
+   margin-bottom: 0;
  }
 
 @keyframes App-logo-spin {

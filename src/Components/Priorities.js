@@ -83,6 +83,13 @@ class Priorities extends Component {
         }         
     }    
 
+    handleDone(e) {       
+
+        console.log("item marked done");
+        e.target.parentNode.id = "done";
+        e.target.id = "complete";                
+    }
+
        
 
     render () {   
@@ -91,10 +98,10 @@ class Priorities extends Component {
 
         const prioritiesList = this.state.prioritiesList.slice(0, 3).map(
             (data) =>             
-            <li className="priorities-list" key={data.priority}>{data.date}<p>{data.priority}</p></li>
-            );     
-
-            
+            <li className="priorities-list" key={data.priority}>{data.date}<p>{data.priority}</p>
+            <button type="button" className="btn btn-light btn-sm " onClick={this.handleDone}>Done</button>
+            </li>            
+            );                
         
                         
         return (            
