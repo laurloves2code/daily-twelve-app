@@ -6,6 +6,8 @@ import Priorities from './Components/Priorities.js';
 import Date from './Components/Date.js';
 //import Background from './Components/Background.js';
 import Weather from './Components/weather.js';
+import Footer from './Components/Footer.js';
+
 
 function App() {
   return (
@@ -21,6 +23,7 @@ function App() {
           <Gratitude />      
           <Priorities />
           <Weather />
+          <Footer />
     </div>
     
   );

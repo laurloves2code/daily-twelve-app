@@ -42,12 +42,13 @@ class Weather extends Component {
     };
 
     apiPhoto = async (
-        urlb = `https://pixabay.com/api/?key=16094226-1e7dd4150d1a0d4d8c4708596&q=calm+sunshine&image_type=photo`
+        urlb = `photoapi`
     ) => {        
         const results = await fetch(urlb);
         const infob = await results.json(); 
-        //const indexB = Math.floor(Math.random() * 40);               
-        const urlbkg = infob.hits[10].webformatURL;          
+        const indexB = Math.floor(Math.random() * 20);    
+        console.log("index number" + indexB);           
+        const urlbkg = infob.hits[indexB].webformatURL;          
         console.log(urlbkg);
         this.setState({bkgImage: {backgroundImage: "url(" + urlbkg + ")"}});     
     };
