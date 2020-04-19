@@ -6,7 +6,7 @@ class Priorities extends Component {
     constructor(props) {
         super(props);
 
-    // this.state will be set with the data input by the user from the form #gratitude-priority
+    // this.state will be set with the data input by the user from the form #priorities-form
       
         this.state = {
           prioritiesList: [],  
@@ -19,7 +19,7 @@ class Priorities extends Component {
       }
 
 
-    // local storage methods. Stores the Gratitude entries in local storage
+    // local storage methods. Stores the Priorities entries in local storage
     // componentDidMount will check for local storage data immediately after compoment is rendered
 
     componentDidMount() {
@@ -36,15 +36,6 @@ class Priorities extends Component {
         localStorage.setItem("priorities", JSON.stringify(nextThought));
       }
     
-// updateThought() method used in early stages for testing the listItem state.
-    
-    // async updateThought() {
-    //     console.log(this.state.listItem);
-    //     await this.setState({listItem: 'This is the new input'});
-    //     console.log(this.state.listItem);
-    //     return this.state.listItem;
-    // };
-
 //handleChange() sets the state with the new input from the user
 
     handleChange(event) {
@@ -68,11 +59,6 @@ class Priorities extends Component {
             let prioritiesArray = [...this.state.prioritiesList];
         prioritiesArray.unshift(this.state.listItem);
 
-// attempting to display the date in new Gratitude post
-
-        // console.log(this.state.listItem.date);
-        // let theTime = this.state.listItem.date;
-        // console.log(theTime.getHours());
 
 // sets the listItem states back to blank for user
 
@@ -83,18 +69,25 @@ class Priorities extends Component {
         }         
     }    
 
+    handleDone(e) {       
+
+        console.log("item marked done");
+        e.target.parentNode.id = "done";
+        e.target.id = "complete";                
+    }
+
        
 
     render () {   
 
-       // maps through prioritiesList array to render
+       // maps through prioritiesList array to render last 3 entered
 
         const prioritiesList = this.state.prioritiesList.slice(0, 3).map(
             (data) =>             
-            <li className="priorities-list" key={data.priority}>{data.date}<p>{data.priority}</p></li>
-            );     
-
-            
+            <li className="priorities-list" key={data.priority}>{data.date}<p>{data.priority}</p>
+            <button type="button" className="btn btn-light btn-sm " onClick={this.handleDone}>Done</button>
+            </li>            
+            );                
         
                         
         return (            
@@ -114,7 +107,7 @@ class Priorities extends Component {
                         className="btn btn-secondary btn-sm "
                         onClick={this.handleSave}>Add to List</button>
 
-                    {/* // Renders list of 3 recently saved gratitude thoughts */}
+                    {/* // Renders list of 3 recently saved items on priorites list */}
 
                 <div className="your-thoughts">                        
                         <ul className="ul-Thoughts">
@@ -135,17 +128,3 @@ class Priorities extends Component {
 }
 
 export default Priorities;
-
-// render () {
-//     return (
-//         <div className="form-group priorities-form py-5">
-//             <label>Top 3 Priorites for Today:</label>
-//             <form className="form-area">
-//                 <input type="text" className="form-control" 
-//                     id="formGroupExampleInput2">
-//                 </input>
-//                 <button type="button" className="btn btn-secondary btn-sm ">Add to List</button>
-//             </form>     
-//         </div>
-//     );
-// }

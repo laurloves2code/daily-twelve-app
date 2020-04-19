@@ -5,7 +5,7 @@ import Gratitude from './Components/Gratitude.js';
 import Priorities from './Components/Priorities.js';
 import Date from './Components/Date.js';
 //import Background from './Components/Background.js';
-import Weather from './Components/Weather.js';
+import Weather from './Components/weather.js';
 
 function App() {
   return (
