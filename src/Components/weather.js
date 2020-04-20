@@ -3,7 +3,6 @@ import '../App.css';
 import sunshine from '../img/sunshine.png';
 import clouds from '../img/clouds.png';
 import rain from '../img/rain.png'
-//import Background from './Components/Background.js';
 //import '../Components/enterapp.js';
 
 class Weather extends Component {
