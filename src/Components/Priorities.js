@@ -69,11 +69,40 @@ class Priorities extends Component {
         }         
     }    
 
-    handleDone(e) {       
-
+    handleDone(e) {                       
         console.log("item marked done");
         e.target.parentNode.id = "done";
-        e.target.id = "complete";                
+        e.target.id = "complete";          
+        
+        // create function to select the object in local storage and remove it
+
+        const removePriority = e.target.previousSibling.innerHTML;
+        console.log("html text of item: " + removePriority);
+
+        const datafromStorage = JSON.parse(localStorage.getItem("priorities"));
+        // console.log(datafromStorage.prioritiesList[1].priority);
+        console.log( datafromStorage.prioritiesList.length);
+        //console.log( 'old array ' + datafromStorage.prioritiesList[2].ptiority);
+        
+
+        // when the removePriority text === the priority text in the array, splice that index
+        // once the array is spliced, set the new array to local storage
+
+        let i;
+
+        for ( i=0; i < datafromStorage.prioritiesList.length; i++ ) {
+            if (datafromStorage.prioritiesList[i].priority === removePriority) {
+                console.log("items clicked as done " + datafromStorage.prioritiesList[i].priority)
+                const indexRemove = i;                
+                console.log("I want to remove this index from array: " + indexRemove);
+                const updatedList = datafromStorage.prioritiesList.pop(i);
+                //localStorage.setItem('priorities',JSON.stringify(updatedList));
+                console.log(updatedList);
+                console.log(datafromStorage.prioritiesList.length);
+
+            }
+        }
+
     }
 
        
@@ -84,7 +113,7 @@ class Priorities extends Component {
 
         const prioritiesList = this.state.prioritiesList.slice(0, 3).map(
             (data) =>             
-            <li className="priorities-list" key={data.priority}>{data.date}<p>{data.priority}</p>
+            <li className="priorities-list" key={data.priority}><p>{data.priority}</p>
             <button type="button" className="btn btn-light btn-sm " onClick={this.handleDone}>Done</button>
             </li>            
             );                

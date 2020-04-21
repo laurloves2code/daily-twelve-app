@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+//import CurrentTime from './CurrentTime.js';
 import '../App.css';
 
 // Gratitude Component contains input form field for each thought message.
@@ -52,8 +53,8 @@ class Gratitude extends Component {
     handleChange(event) {
         //const timeNow = Date();
         this.setState({gratValue: {
-            date: Date.now(),
-            message: event.target.value}}
+            message: event.target.value
+            }}
             );
         }
 
@@ -82,8 +83,8 @@ class Gratitude extends Component {
         this.setState({
             savedThoughts: thoughtsArray,
             gratValue: {
-                date: '',
-                message: ''}});
+                message: ''
+                }});
 
         }         
     }    
@@ -96,7 +97,9 @@ class Gratitude extends Component {
 
         const thoughtsList = this.state.savedThoughts.slice(0, 3).map(
             (data) =>             
-            <li className="thoughts-list" key={data.message}>{data.date}<p>{data.message}</p></li>
+            <li className="thoughts-list" key={data.message}><p>{data.message}</p>
+            {/* <p>{this.props.state.theDateToday}</p> */}
+            </li>
             );     
 
             

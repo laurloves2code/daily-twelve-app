@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react';
 import '../App.css';
 import sunshine from '../img/sunshine.png';
@@ -27,7 +28,7 @@ class Weather extends Component {
     // testing api - will save apikey in another hidden document
 
     apiWeather = async (
-        url = `weatherapi`
+        url = 'http://api.openweathermap.org/data/2.5/weather?q=Louisville&appid=' + process.env.REACT_APP_WEATHER_API_KEY
     ) => {        
         const results = await fetch(url);
         const info = await results.json();
@@ -41,7 +42,7 @@ class Weather extends Component {
     };
 
     apiPhoto = async (
-        urlb = `photoapi`
+        urlb = 'https://pixabay.com/api/?key=' + process.env.REACT_APP_PHOTO_API_KEY + '&q=calm+landscape&image_type=photo'
     ) => {        
         const results = await fetch(urlb);
         const infob = await results.json(); 
