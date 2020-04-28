@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 import '../App.css';
 import sunshine from '../img/sunshine.png';
 import clouds from '../img/clouds.png';
-import rain from '../img/rain.png'
+import rain from '../img/rain.png';
+import fewclouds from '../img/fewclouds.png';
 //import '../Components/enterapp.js';
 
 class Weather extends Component {
@@ -46,7 +47,7 @@ class Weather extends Component {
     ) => {        
         const results = await fetch(urlb);
         const infob = await results.json(); 
-        const indexB = Math.floor(Math.random() * 20);    
+        const indexB = Math.floor(Math.random() * 18);    
         console.log("index number" + indexB);           
         const urlbkg = infob.hits[indexB].webformatURL;          
         console.log(urlbkg);
@@ -61,7 +62,10 @@ class Weather extends Component {
     };
 
     setSkyicon = () => {
-        if (this.state.outside === "Clouds") {
+        if (this.state.look === "few clouds") {
+            console.log("it is a littlecloudy out");
+            this.setState({skyicon: fewclouds});
+        } else if (this.state.outside === "Clouds") {
             console.log("it is cloudy out");
             this.setState({skyicon: clouds});
         } else if (this.state.outside === "Rain") {

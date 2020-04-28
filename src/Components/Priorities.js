@@ -88,20 +88,21 @@ class Priorities extends Component {
         // when the removePriority text === the priority text in the array, splice that index
         // once the array is spliced, set the new array to local storage
 
-        let i;
+        //let i;
 
-        for ( i=0; i < datafromStorage.prioritiesList.length; i++ ) {
-            if (datafromStorage.prioritiesList[i].priority === removePriority) {
-                console.log("items clicked as done " + datafromStorage.prioritiesList[i].priority)
-                const indexRemove = i;                
-                console.log("I want to remove this index from array: " + indexRemove);
-                const updatedList = datafromStorage.prioritiesList.pop(i);
-                //localStorage.setItem('priorities',JSON.stringify(updatedList));
-                console.log(updatedList);
-                console.log(datafromStorage.prioritiesList.length);
+        // for ( i=0; i < datafromStorage.prioritiesList.length; i++ ) {
+        //     if (datafromStorage.prioritiesList[i].priority === removePriority) {
+        //         console.log("items clicked as done " + datafromStorage.prioritiesList[i].priority)
+        //         const indexRemove = i;                
+        //         console.log("I want to remove this index from array: " + indexRemove);
+        //         const updatedList = datafromStorage.prioritiesList.slice(i, 1);
+        //         //this.setState({prioritiesList: updatedList});
+        //         localStorage.setItem('priorities',JSON.stringify(updatedList));
+        //         console.log(updatedList);
+        //         console.log(datafromStorage.prioritiesList.length);
 
-            }
-        }
+        //     }
+        // }
 
     }
 

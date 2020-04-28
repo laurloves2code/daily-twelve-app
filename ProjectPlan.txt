@@ -50,7 +50,7 @@ Finally, the Weather for day. The background image is pulled from an API to refl
 * Week 3 - APIs Confirmed. Finalize Design and Router pages. Create mock API data. Continue Learning Bootstrap. Git Commits.
 * Week 4 - Weather API, (possibly - search zip code, user location)
 * Week 5 - Image API to interact with Weather API data
-- Week 6 - Learn HTML5 Local Storage - Priority List, Quote, User Greeting
+* Week 6 - Learn HTML5 Local Storage - Priority List, Quote, User Greeting
 - Week 7 - Work out any bugs
 - Week 8 - Final App Complete
 
