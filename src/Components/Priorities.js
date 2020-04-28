@@ -52,12 +52,12 @@ class Priorities extends Component {
 
         if (this.state.listItem.priority === '') {
 
-            console.log('need list item');
+            //console.log('need list item');
 
         } else {
 
             let prioritiesArray = [...this.state.prioritiesList];
-        prioritiesArray.unshift(this.state.listItem);
+            prioritiesArray.unshift(this.state.listItem);
 
 
 // sets the listItem states back to blank for user
@@ -77,33 +77,36 @@ class Priorities extends Component {
         // create function to select the object in local storage and remove it
 
         const removePriority = e.target.previousSibling.innerHTML;
-        console.log("html text of item: " + removePriority);
+        //console.log("html text of item: " + removePriority);
 
         const datafromStorage = JSON.parse(localStorage.getItem("priorities"));
         // console.log(datafromStorage.prioritiesList[1].priority);
-        console.log( datafromStorage.prioritiesList.length);
-        //console.log( 'old array ' + datafromStorage.prioritiesList[2].ptiority);
+        console.log( "current length of list array: " + datafromStorage.prioritiesList.length);
+        //console.log( 'old array ' + datafromStorage.prioritiesList[2].priority);
         
 
         // when the removePriority text === the priority text in the array, splice that index
         // once the array is spliced, set the new array to local storage
 
-        //let i;
+        let i;
 
-        // for ( i=0; i < datafromStorage.prioritiesList.length; i++ ) {
-        //     if (datafromStorage.prioritiesList[i].priority === removePriority) {
-        //         console.log("items clicked as done " + datafromStorage.prioritiesList[i].priority)
-        //         const indexRemove = i;                
-        //         console.log("I want to remove this index from array: " + indexRemove);
-        //         const updatedList = datafromStorage.prioritiesList.slice(i, 1);
-        //         //this.setState({prioritiesList: updatedList});
-        //         localStorage.setItem('priorities',JSON.stringify(updatedList));
-        //         console.log(updatedList);
-        //         console.log(datafromStorage.prioritiesList.length);
+        for ( i=0; i < datafromStorage.prioritiesList.length; i++ ) {
+            if (datafromStorage.prioritiesList[i].priority === removePriority) {
+                console.log("items clicked as done " + datafromStorage.prioritiesList[i].priority)
+                const indexRemove = i;                
+                console.log("I want to remove this index from array: " + indexRemove);
+                const updatedList = datafromStorage.prioritiesList.pop(i);
 
-        //     }
-        // }
+                //when line 102 is live, it does not work
 
+                //localStorage.setItem('priorities',JSON.stringify(updatedList));
+                
+                console.log(updatedList);
+                console.log(datafromStorage.prioritiesList.length);
+
+            }
+        }
+        
     }
 
        
