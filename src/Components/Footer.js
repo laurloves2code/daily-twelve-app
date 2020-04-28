@@ -26,7 +26,7 @@ class Footer extends Component {
             writegreeting: this.state.greeting[randomNum]
         });
 
-        console.log('this is the number: ' + randomNum)
+        //console.log('this is the number: ' + randomNum)
     }
    
 

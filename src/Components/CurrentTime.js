@@ -23,7 +23,7 @@ class CurrentTime extends Component {
         const dateDay = dateNew.getDate();
         const dateYear = dateNew.getFullYear();
 
-        console.log("base date " + dateNew);
+        //console.log("base date " + dateNew);
 
         let monthName = "month";
         let weekName = "week";

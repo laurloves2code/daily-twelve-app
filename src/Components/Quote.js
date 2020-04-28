@@ -18,9 +18,9 @@ class Quote extends Component {
     ) => {        
         const results = await fetch(url);
         const info = await results.json();
-        console.log(info);              
-        console.log(info.contents.quotes[0].quote);
-        console.log(info.contents.quotes[0].author);        
+        //console.log(info);              
+        //console.log(info.contents.quotes[0].quote);
+        //console.log(info.contents.quotes[0].author);        
         this.setState({quote: (info.contents.quotes[0].quote)});
         this.setState({author: (info.contents.quotes[0].author)});
     };

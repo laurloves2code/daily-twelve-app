@@ -92,17 +92,25 @@ class Priorities extends Component {
 
         for ( i=0; i < datafromStorage.prioritiesList.length; i++ ) {
             if (datafromStorage.prioritiesList[i].priority === removePriority) {
-                console.log("items clicked as done " + datafromStorage.prioritiesList[i].priority)
+                
+                //console.log("items clicked as done " + datafromStorage.prioritiesList[i].priority)
                 const indexRemove = i;                
                 console.log("I want to remove this index from array: " + indexRemove);
-                const updatedList = datafromStorage.prioritiesList.pop(i);
 
-                //when line 102 is live, it does not work
-
-                //localStorage.setItem('priorities',JSON.stringify(updatedList));
+                console.log(datafromStorage.prioritiesList[i]);
                 
+                //--- should I use removeItem() or setItem() ?
+                // localStorage.removeItem(datafromStorage.prioritiesList[i]);
+
+                // seems the splice removes the entire array from storage
+
+                const updatedList = datafromStorage.prioritiesList.splice(i, 1);
+
                 console.log(updatedList);
-                console.log(datafromStorage.prioritiesList.length);
+
+                console.log("updated length of array: " + datafromStorage.prioritiesList.length);
+
+                localStorage.setItem('priorities',JSON.stringify(updatedList));                        
 
             }
         }

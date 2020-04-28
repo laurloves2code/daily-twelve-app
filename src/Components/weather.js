@@ -38,8 +38,8 @@ class Weather extends Component {
         this.setState({outside: info.weather[0].main});
         this.setState({look: info.weather[0].description});
         this.setSkyicon();        
-        console.log(info);
-        console.log(this.state.location);
+        //console.log(info);
+        //console.log(this.state.location);
     };
 
     apiPhoto = async (
@@ -48,9 +48,9 @@ class Weather extends Component {
         const results = await fetch(urlb);
         const infob = await results.json(); 
         const indexB = Math.floor(Math.random() * 18);    
-        console.log("index number" + indexB);           
+        //console.log("index number: " + indexB);           
         const urlbkg = infob.hits[indexB].webformatURL;          
-        console.log(urlbkg);
+        //console.log(urlbkg);
         this.setState({bkgImage: {backgroundImage: "url(" + urlbkg + ")"}});     
     };
 
@@ -63,18 +63,18 @@ class Weather extends Component {
 
     setSkyicon = () => {
         if (this.state.look === "few clouds") {
-            console.log("it is a littlecloudy out");
+            //console.log("it is a little cloudy out");
             this.setState({skyicon: fewclouds});
         } else if (this.state.outside === "Clouds") {
-            console.log("it is cloudy out");
+            //console.log("it is cloudy out");
             this.setState({skyicon: clouds});
         } else if (this.state.outside === "Rain") {
-            console.log("it is rainy");
+            //console.log("it is rainy");
             this.setState({skyicon: rain});
         } else
         // if (this.state.outside === "Clear") 
             {
-            console.log("Sky is not cloudy");
+            //console.log("Sky is not cloudy");
             this.setState({skyicon: sunshine});
         } 
     };
