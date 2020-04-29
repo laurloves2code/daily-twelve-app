@@ -70,53 +70,22 @@ class Priorities extends Component {
     }    
 
     handleDone(e) {                       
-        console.log("item marked done");
-        e.target.parentNode.id = "done";
-        e.target.id = "complete";          
-        
-        // create function to select the object in local storage and remove it
+        console.log(e);
 
-        const removePriority = e.target.previousSibling.innerHTML;
-        //console.log("html text of item: " + removePriority);
+        var prioritiesNew = [...this.state.prioritiesList];
 
-        const datafromStorage = JSON.parse(localStorage.getItem("priorities"));
-        // console.log(datafromStorage.prioritiesList[1].priority);
-        console.log( "current length of list array: " + datafromStorage.prioritiesList.length);
-        //console.log( 'old array ' + datafromStorage.prioritiesList[2].priority);
-        
+        var removeIndex = prioritiesNew.indexOf(e);
 
-        // when the removePriority text === the priority text in the array, splice that index
-        // once the array is spliced, set the new array to local storage
+        console.log(removeIndex);
 
-        let i;
+        prioritiesNew.splice(removeIndex, 1);
 
-        for ( i=0; i < datafromStorage.prioritiesList.length; i++ ) {
-            if (datafromStorage.prioritiesList[i].priority === removePriority) {
-                
-                //console.log("items clicked as done " + datafromStorage.prioritiesList[i].priority)
-                const indexRemove = i;                
-                console.log("I want to remove this index from array: " + indexRemove);
+        this.setState({...this.state, prioritiesList: prioritiesNew}, () => {console.log(this.state.prioritiesList)});
 
-                console.log(datafromStorage.prioritiesList[i]);
-                
-                //--- should I use removeItem() or setItem() ?
-                // localStorage.removeItem(datafromStorage.prioritiesList[i]);
+       
 
-                // seems the splice removes the entire array from storage
-
-                const updatedList = datafromStorage.prioritiesList.splice(i, 1);
-
-                console.log(updatedList);
-
-                console.log("updated length of array: " + datafromStorage.prioritiesList.length);
-
-                localStorage.setItem('priorities',JSON.stringify(updatedList));                        
-
-            }
-        }
-        
     }
-
+                 
        
 
     render () {   
@@ -126,7 +95,7 @@ class Priorities extends Component {
         const prioritiesList = this.state.prioritiesList.slice(0, 3).map(
             (data) =>             
             <li className="priorities-list" key={data.priority}><p>{data.priority}</p>
-            <button type="button" className="btn btn-light btn-sm " onClick={this.handleDone}>Done</button>
+            <button type="button" className="btn btn-light btn-sm " onClick={() => this.handleDone(data)}>Done</button>
             </li>            
             );                
         
