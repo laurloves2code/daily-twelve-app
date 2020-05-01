@@ -62,8 +62,10 @@ class Weather extends Component {
     };
 
     setSkyicon = () => {
-        if (this.state.look === "few clouds") {
-            //console.log("it is a little cloudy out");
+        if (this.state.look === "few clouds") {            
+            this.setState({skyicon: fewclouds});
+        }  else if (this.state.look === "scattered clouds") {
+            //console.log("it is cloudy out");
             this.setState({skyicon: fewclouds});
         } else if (this.state.outside === "Clouds") {
             //console.log("it is cloudy out");
@@ -81,7 +83,7 @@ class Weather extends Component {
 
     render () {
         return (
-            <div className="weather-bkg bkgApp" style={this.state.bkgImage}>
+            <div className="weather-bkg bkgApp" id="weatherid" style={this.state.bkgImage}>
             <h1 className="py-4">{this.state.location}</h1>
             <h4 className="realFeel">{this.state.look}</h4>
             <img src={this.state.skyicon} alt="Weather"/>

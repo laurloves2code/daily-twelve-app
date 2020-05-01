@@ -35,8 +35,9 @@ function App() {
             <Route path="/about" component={About}/>
             <Route exact path="/" component={Quote}/>
             <Route exact path="/" component={Gratitude}/>                
-            <Route exact path="/" component={Priorities}/>
+            <Route exact path="/" component={Priorities}/>            
             <Route exact path="/" component={Weather}/>
+            <Route path="/weather" component={Weather}/>
             <Route path="/thoughts" component={GratitudeFull}/>            
             <Footer />
       </div>

@@ -32,20 +32,30 @@
   flex-direction: column;
   justify-content: space-between;
   list-style-type: none;
-  align-items: center;
+  align-items: stretch;
   color: white;
   padding-left: 0;
   margin-bottom: 0;
 }
 
-.navDiv li {
+.navDiv a {
   background: #50738a;
+  display: flex;  
+  justify-content: center;
+  color: white;
   padding-top: .75em; 
-  width: 100%;
+  margin-right: auto;
   margin-top: 5px;
   margin-bottom: 5px;
   height: 3em;
-  font-size: 1.5em;
+  font-size: 1.25em;
+  text-decoration: none;
+}
+
+.navDiv a:hover,
+.navDiv .active {
+  background: #523b61;
+  color: white;
 }
 
 .quote { 
