@@ -19,8 +19,9 @@ Finally, the Weather for day. The background image is pulled from an API to refl
 - Responsive UI
 - JavaScript 
 - Bootstrap
-- ReactJS, React Router
-- npm
+- ReactJS
+- React Router, (npm install --save react-router-dom)
+- npm, (npm install)
 - Local Storage using HTML5
 - API data
 
@@ -51,12 +52,15 @@ Finally, the Weather for day. The background image is pulled from an API to refl
 * Week 4 - Weather API, (possibly - search zip code, user location)
 * Week 5 - Image API to interact with Weather API data
 * Week 6 - Learn HTML5 Local Storage - Priority List, Quote, User Greeting
-- Week 7 - Work out any bugs
-- Week 8 - Final App Complete
+* Week 7 - Work out any bugs
+* Week 8 - Final App Complete
 
 ------- APIs
+
 Weather Images - https://www.pexels.com/api/documentation/           
 Weather - https://openweathermap.org/current#cities
 Quotes - https://theysaidso.com/api/
+
+The API keys will be provided upon request.
 
 

@@ -27,6 +27,27 @@
   pointer-events: none;
 }
 
+.navDiv ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  list-style-type: none;
+  align-items: center;
+  color: white;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.navDiv li {
+  background: #50738a;
+  padding-top: .75em; 
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  height: 3em;
+  font-size: 1.5em;
+}
+
 .quote { 
   padding-top: 1.5em;
 }
