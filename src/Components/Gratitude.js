@@ -13,12 +13,16 @@ class Gratitude extends Component {
       
         this.state = {
           savedThoughts: [],  
-          gratValue: {}
+          gratValue: {},
+          displayStyle: {display: "none"},
+          displayStyleHide: {display: "none"},
+          displayStyleView: {display: "inline-block"}
         };
 
         this.handleChange=this.handleChange.bind(this);
         this.handleSave=this.handleSave.bind(this);
-
+        this.handleView=this.handleView.bind(this);
+        this.handleHide=this.handleHide.bind(this);
       }
 
 
@@ -70,13 +74,7 @@ class Gratitude extends Component {
         } else {
 
             let thoughtsArray = [...this.state.savedThoughts];
-        thoughtsArray.unshift(this.state.gratValue);
-
-// attempting to display the date in new Gratitude post
-
-        // console.log(this.state.gratValue.date);
-        // let theTime = this.state.gratValue.date;
-        // console.log(theTime.getHours());
+            thoughtsArray.unshift(this.state.gratValue);
 
 // sets the gratValue states back to blank for user
 
@@ -89,27 +87,60 @@ class Gratitude extends Component {
         }         
     }    
 
+    handleX(e) {                       
+        console.log(e);
+
+        var thoughtsNew = [...this.state.savedThoughts];
+
+        var removeIndex = thoughtsNew.indexOf(e);
+
+        console.log(removeIndex);
+
+        thoughtsNew.splice(removeIndex, 1);
+
+        this.setState({...this.state, savedThoughts: thoughtsNew}, () => {console.log(this.state.savedThoughts)});
+    }
+
+    handleView() {
+        this.setState({displayStyle: {display: "flex"}});
+        this.setState({displayStyleHide: {display: "inline-block"}});
+        this.setState({displayStyleView: {display: "none"}});
+    }
+
+    handleHide() {
+        this.setState({displayStyle: {display: "none"}});
+        this.setState({displayStyleHide: {display: "none"}});
+        this.setState({displayStyleView: {display: "inline-block"}});
+    }
+
        
 
     render () {   
 
        // maps through savedThoughts array to render
 
-        const thoughtsList = this.state.savedThoughts.slice(0, 3).map(
+        const thoughtsList = this.state.savedThoughts.slice(0, 2).map(
             (data) =>             
             <li className="thoughts-list" key={data.message}><p>{data.message}</p>
+            <button type="button" className= "xbtn" onClick={() => this.handleX(data)}>X</button>
             {/* <p>{this.props.state.theDateToday}</p> */}
             </li>
-            );     
-
+            );  
             
+            const thoughtsFullList = this.state.savedThoughts.slice(2, this.state.savedThoughts.length).map(
+                (data) =>             
+                <li className="thoughts-list" style={this.state.displayStyle} key={data.message}><p>{data.message}</p>
+                <button type="button" className= "xbtn" onClick={() => this.handleX(data)}>X</button>
+                {/* <p>{this.props.state.theDateToday}</p> */}
+                </li>
+                );
         
                         
         return (            
             <div className="gratitude-form py-5">                
                 <form className="form-area">
                     <div className="form-group">
-                        <label htmlFor="gratitude-message">Thoughts of Gratitude</label>           
+                        <label htmlFor="gratitude-message">Enter a Thought of Gratitude</label>           
                         <textarea 
                             className="form-control" 
                             id="gratitude-message" 
@@ -121,6 +152,14 @@ class Gratitude extends Component {
                     <button type="button" 
                         className="btn btn-secondary btn-sm "
                         onClick={this.handleSave}>Save</button>
+                    <button type="button" 
+                        style={this.state.displayStyleView}
+                        className="btn btn-view btn-secondary btn-sm "                        
+                        onClick={this.handleView}>View All</button>
+                    <button type="button"
+                        style={this.state.displayStyleHide}
+                        className="btn btn-view btn-secondary btn-sm "
+                        onClick={this.handleHide}>Hide</button>    
 
                     {/* // Renders list of 3 recently saved gratitude thoughts */}
 
@@ -128,7 +167,8 @@ class Gratitude extends Component {
                         <h5>Your Thoughts of Gratitude</h5>
                         <ul className="ul-Thoughts">
                         
-                        {thoughtsList}                            
+                        {thoughtsList} 
+                        {thoughtsFullList}
 
                         </ul>
                         

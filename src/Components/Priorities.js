@@ -92,7 +92,7 @@ class Priorities extends Component {
 
        // maps through prioritiesList array to render last 3 entered
 
-        const prioritiesList = this.state.prioritiesList.slice(0, 3).map(
+        const prioritiesList = this.state.prioritiesList.slice(0, 7).map(
             (data) =>             
             <li className="priorities-list" key={data.priority}><p>{data.priority}</p>
             <button type="button" className="btn btn-light btn-sm " onClick={() => this.handleDone(data)}>Done</button>

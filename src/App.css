@@ -19,6 +19,7 @@
 .main {
   padding: 1em 4em 3em 3em;  
   background-color: #61dafb;
+  box-shadow: 0 4px 8px 0 rgba(99, 99, 99, 0.2), 0 6px 20px 0 rgba(134, 134, 134, 0.19);
 }
 
 .App-logo {
@@ -43,10 +44,20 @@ label {
   max-height: 35px;
 }
 
+.xbtn {
+  border: none;
+  background: none;
+}
+
+.btn-view {
+  margin-left: 15px;
+}
+
 .footerDiv {
   background-color: #61dafb;
   text-align: center;
   padding: 20px;  
+  box-shadow: 0 4px 8px 0 rgba(99, 99, 99, 0.2), 0 6px 20px 0 rgba(134, 134, 134, 0.19);
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -74,6 +85,7 @@ label {
   padding-right: 30px;
   padding-left: 30px;
   background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 8px 0 rgba(99, 99, 99, 0.2), 0 6px 20px 0 rgba(134, 134, 134, 0.19);
 }
 
 .versebkg p {
@@ -83,13 +95,12 @@ label {
 }
 
 .weather-bkg {
-  /* background-image: linear-gradient(to bottom right, rgb(124, 60, 152, .5), rgb(39, 27, 107, .5)); */
-  /* background-image: url("https://pixabay.com/get/5ee4d3444f4faa0df7c5d57cc1283e7a173dd8f85254794e742873d49349_640.jpg"); */
-
+  
   background-repeat: no-repeat;  
   background-position: center; 
   background-size: 100% auto;
   color: white;   
+  box-shadow: 0 4px 8px 0 rgba(99, 99, 99, 0.2), 0 6px 20px 0 rgba(134, 134, 134, 0.19);
  }
 
  .bkgApp {  
@@ -102,6 +113,7 @@ label {
   background-color: #73d1c0;
   color: white;  
   margin-bottom: 0em; 
+  box-shadow: 0 4px 8px 0 rgba(99, 99, 99, 0.2), 0 6px 20px 0 rgba(134, 134, 134, 0.19);
  }
 
  .your-thoughts {
@@ -124,12 +136,20 @@ label {
   color: #777777;
   margin-bottom: 1em;
   border-radius: 15px;
- }
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.thoughts-list p {
+  margin-right: .5em;
+}
 
  .priorities-form {
   background-color: #f3f7fc;
   color: rgb(70, 70, 70);  
   margin-bottom: 0em; 
+  box-shadow: 0 4px 8px 0 rgba(99, 99, 99, 0.2), 0 6px 20px 0 rgba(134, 134, 134, 0.19);
  }
 
  .priorities-list {
