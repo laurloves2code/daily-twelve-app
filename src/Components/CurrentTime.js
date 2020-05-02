@@ -23,13 +23,13 @@ class CurrentTime extends Component {
         const dateDay = dateNew.getDate();
         const dateYear = dateNew.getFullYear();
 
-        //console.log("base date " + dateNew);
-
         let monthName = "month";
         let weekName = "week";
         const monthNameArray = 
         ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
         const dayNameArray = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+        // connect the index to the day names and months items in the array
 
         if (weekName && dateMonth) {
           monthName = monthNameArray[dateMonth]; 

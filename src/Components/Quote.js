@@ -17,10 +17,7 @@ class Quote extends Component {
         url = `https://quotes.rest/qod?category=inspire`
     ) => {        
         const results = await fetch(url);
-        const info = await results.json();
-        //console.log(info);              
-        //console.log(info.contents.quotes[0].quote);
-        //console.log(info.contents.quotes[0].author);        
+        const info = await results.json();               
         this.setState({quote: (info.contents.quotes[0].quote)});
         this.setState({author: (info.contents.quotes[0].author)});
     };

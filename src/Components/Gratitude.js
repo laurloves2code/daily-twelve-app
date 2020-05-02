@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-//import CurrentTime from './CurrentTime.js';
 import '../App.css';
 
 // Gratitude Component contains input form field for each thought message.
@@ -9,8 +8,6 @@ class Gratitude extends Component {
     constructor(props) {
         super(props);
 
-    // this.state will be set with the data input by the user from the form #gratitude-message
-      
         this.state = {
           savedThoughts: [],  
           gratValue: {},
@@ -30,6 +27,7 @@ class Gratitude extends Component {
     // componentDidMount will check for local storage data immediately after compoment is rendered
 
     componentDidMount() {
+
         let thoughtsFromStorage = JSON.parse(localStorage.getItem("thoughts"));
 
     // if there is data in local storage it will update the state with the data
@@ -41,28 +39,18 @@ class Gratitude extends Component {
       
     UNSAFE_componentWillUpdate(gratitudeData, nextThought) {
         localStorage.setItem("thoughts", JSON.stringify(nextThought));
-      }
-    
-// updateThought() method used in early stages for testing the gratValue state.
-    
-    // async updateThought() {
-    //     console.log(this.state.gratValue);
-    //     await this.setState({gratValue: 'This is the new input'});
-    //     console.log(this.state.gratValue);
-    //     return this.state.gratValue;
-    // };
+      }  
 
-//handleChange() sets the state with the new input from the user
+// handleChange() sets the state with the new input from the user
 
-    handleChange(event) {
-        //const timeNow = Date();
+    handleChange(event) {        
         this.setState({gratValue: {
             message: event.target.value
             }}
             );
         }
 
-//handleSave() saves the current gratValue state when the Save button is clicked
+// handleSave() saves the current gratValue state when the Save button is clicked
 // this new data is added to thebeginning of an array of gratValue objects - savedThoughts
 
     handleSave() {           
@@ -76,7 +64,7 @@ class Gratitude extends Component {
             let thoughtsArray = [...this.state.savedThoughts];
             thoughtsArray.unshift(this.state.gratValue);
 
-// sets the gratValue states back to blank for user
+// sets the gratValue states back to blank for user once saved
 
         this.setState({
             savedThoughts: thoughtsArray,
@@ -85,27 +73,26 @@ class Gratitude extends Component {
                 }});
 
         }         
-    }    
+    }   
+    
+    // removes selected thought item from gratitude list
 
     handleX(e) {                       
-        console.log(e);
-
-        var thoughtsNew = [...this.state.savedThoughts];
-
-        var removeIndex = thoughtsNew.indexOf(e);
-
-        console.log(removeIndex);
-
+        let thoughtsNew = [...this.state.savedThoughts];
+        let removeIndex = thoughtsNew.indexOf(e);  
         thoughtsNew.splice(removeIndex, 1);
-
-        this.setState({...this.state, savedThoughts: thoughtsNew}, () => {console.log(this.state.savedThoughts)});
+        this.setState({...this.state, savedThoughts: thoughtsNew});
     }
+
+    // diplays all list items
 
     handleView() {
         this.setState({displayStyle: {display: "flex"}});
         this.setState({displayStyleHide: {display: "inline-block"}});
         this.setState({displayStyleView: {display: "none"}});
     }
+
+    // hides list items
 
     handleHide() {
         this.setState({displayStyle: {display: "none"}});
@@ -122,16 +109,14 @@ class Gratitude extends Component {
         const thoughtsList = this.state.savedThoughts.slice(0, 1).map(
             (data) =>             
             <li className="thoughts-list" key={data.message}><p>{data.message}</p>
-            <button type="button" className= "xbtn" onClick={() => this.handleX(data)}>X</button>
-            {/* <p>{this.props.state.theDateToday}</p> */}
+            <button type="button" className= "xbtn" onClick={() => this.handleX(data)}>X</button>            
             </li>
             );  
             
             const thoughtsFullList = this.state.savedThoughts.slice(1, this.state.savedThoughts.length).map(
                 (data) =>             
                 <li className="thoughts-list" style={this.state.displayStyle} key={data.message}><p>{data.message}</p>
-                <button type="button" className= "xbtn" onClick={() => this.handleX(data)}>X</button>
-                {/* <p>{this.props.state.theDateToday}</p> */}
+                <button type="button" className= "xbtn" onClick={() => this.handleX(data)}>X</button>                
                 </li>
                 );
         
@@ -159,9 +144,7 @@ class Gratitude extends Component {
                     <button type="button"
                         style={this.state.displayStyleHide}
                         className="btn btn-view btn-secondary btn-sm "
-                        onClick={this.handleHide}>Hide</button>    
-
-                    {/* // Renders list of 3 recently saved gratitude thoughts */}
+                        onClick={this.handleHide}>Hide</button>                        
 
                 <div className="your-thoughts">
                         <h5>Today's Thought of Gratitude</h5>

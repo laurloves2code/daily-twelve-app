@@ -1,16 +1,13 @@
 import React, { Component } from 'react';
-//import CurrentTime from './CurrentTime.js';
 import '../App.css';
 
-// Gratitude Component contains input form field for each thought message.
+// GratitudeFull Component used to render a full list of thought items 
 
 class GratitudeFull extends Component {
 
     constructor(props) {
         super(props);
-
-    // this.state will be set with the data input by the user from the form #gratitude-message
-      
+        
         this.state = {
           savedThoughts: [],  
           gratValue: {},
@@ -26,10 +23,7 @@ class GratitudeFull extends Component {
       }
 
 
-    // local storage methods. Stores the Gratitude entries in local storage
-    // componentDidMount will check for local storage data immediately after compoment is rendered
-
-    componentDidMount() {
+        componentDidMount() {
         let thoughtsFromStorage = JSON.parse(localStorage.getItem("thoughts"));
 
     // if there is data in local storage it will update the state with the data
@@ -43,27 +37,16 @@ class GratitudeFull extends Component {
         localStorage.setItem("thoughts", JSON.stringify(nextThought));
       }
     
-// updateThought() method used in early stages for testing the gratValue state.
-    
-    // async updateThought() {
-    //     console.log(this.state.gratValue);
-    //     await this.setState({gratValue: 'This is the new input'});
-    //     console.log(this.state.gratValue);
-    //     return this.state.gratValue;
-    // };
 
 //handleChange() sets the state with the new input from the user
 
-    handleChange(event) {
-        //const timeNow = Date();
+    handleChange(event) {        
         this.setState({gratValue: {
             message: event.target.value
             }}
             );
         }
 
-//handleSave() saves the current gratValue state when the Save button is clicked
-// this new data is added to thebeginning of an array of gratValue objects - savedThoughts
 
     handleSave() {           
 
@@ -76,8 +59,6 @@ class GratitudeFull extends Component {
             let thoughtsArray = [...this.state.savedThoughts];
             thoughtsArray.unshift(this.state.gratValue);
 
-// sets the gratValue states back to blank for user
-
         this.setState({
             savedThoughts: thoughtsArray,
             gratValue: {
@@ -88,17 +69,10 @@ class GratitudeFull extends Component {
     }    
 
     handleX(e) {                       
-        console.log(e);
-
-        var thoughtsNew = [...this.state.savedThoughts];
-
-        var removeIndex = thoughtsNew.indexOf(e);
-
-        console.log(removeIndex);
-
+        let thoughtsNew = [...this.state.savedThoughts];
+        let removeIndex = thoughtsNew.indexOf(e);
         thoughtsNew.splice(removeIndex, 1);
-
-        this.setState({...this.state, savedThoughts: thoughtsNew}, () => {console.log(this.state.savedThoughts)});
+        this.setState({...this.state, savedThoughts: thoughtsNew});
     }
 
     handleView() {
@@ -122,20 +96,16 @@ class GratitudeFull extends Component {
         const thoughtsList = this.state.savedThoughts.map(
             (data) =>             
             <li className="thoughts-list" key={data.message}><p>{data.message}</p>
-            <button type="button" className= "xbtn" onClick={() => this.handleX(data)}>X</button>
-            {/* <p>{this.props.state.theDateToday}</p> */}
+            <button type="button" className= "xbtn" onClick={() => this.handleX(data)}>X</button>            
             </li>
             );            
-            
-        
+                   
                         
         return (            
             <div className="gratitude-form py-5">                
                 <form className="form-area">
                     
-                       
-
-                   
+                                          
 
                 <div className="your-thoughts">
                         <h3>Your Thoughts of Gratitude</h3>
@@ -143,13 +113,10 @@ class GratitudeFull extends Component {
                         
                         {thoughtsList} 
                         
-                        </ul>
-                        
+                        </ul>                       
                     
-                 </div>
-                        
-                </form>                 
-
+                 </div>                        
+                </form>              
             </div>
         );
     }

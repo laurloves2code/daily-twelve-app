@@ -4,6 +4,8 @@ import '../App.css';
 
 class Footer extends Component {
 
+    // array of positive greetings
+    
     state = {
         greeting: [
             'Have a Great Day', 
@@ -24,9 +26,7 @@ class Footer extends Component {
 
         this.setState({
             writegreeting: this.state.greeting[randomNum]
-        });
-
-        //console.log('this is the number: ' + randomNum)
+        });       
     }
    
 

@@ -85,8 +85,8 @@ Quotes - https://theysaidso.com/api/ (no api key required)
 - Type Command:
     npm install
 - Before running app. Input API Keys as a string into the weather.js component file:    
-    \src\Components\Weather.js - insert Open Weather api key in line 32 replace 'process.env.REACT_APP_WEATHER_API_KEY' with key
-    \src\Components\Weather.js - insert Pixabay api key in line 46 replace 'process.env.REACT_APP_PHOTO_API_KEY' with key
+    \src\Components\Weather.js - insert Open Weather api key in line 30 replace 'process.env.REACT_APP_WEATHER_API_KEY' with key
+    \src\Components\Weather.js - insert Pixabay api key in line 44 replace 'process.env.REACT_APP_PHOTO_API_KEY' with key
 
 - Run React App using command:
     npm start

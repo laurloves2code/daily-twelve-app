@@ -45,20 +45,16 @@ class Priorities extends Component {
             );
         }
 
-//handleSave() saves the current listItem state when the Save button is clicked
+// handleSave() saves the current listItem state when the Save button is clicked
 // this new data is added to thebeginning of an array of listItem objects - prioritiesList
 
     handleSave() {           
 
         if (this.state.listItem.priority === '') {
-
-            //console.log('need list item');
-
+            console.log('need priority item');
         } else {
-
             let prioritiesArray = [...this.state.prioritiesList];
             prioritiesArray.unshift(this.state.listItem);
-
 
 // sets the listItem states back to blank for user
 
@@ -70,27 +66,17 @@ class Priorities extends Component {
     }    
 
     handleDone(e) {                       
-        console.log(e);
-
-        var prioritiesNew = [...this.state.prioritiesList];
-
-        var removeIndex = prioritiesNew.indexOf(e);
-
-        console.log(removeIndex);
-
+        let prioritiesNew = [...this.state.prioritiesList];
+        let removeIndex = prioritiesNew.indexOf(e);
         prioritiesNew.splice(removeIndex, 1);
-
-        this.setState({...this.state, prioritiesList: prioritiesNew}, () => {console.log(this.state.prioritiesList)});
-
-       
-
+        this.setState({...this.state, prioritiesList: prioritiesNew}, () => {console.log(this.state.prioritiesList)});     
     }
                  
        
 
     render () {   
 
-       // maps through prioritiesList array to render last 3 entered
+       // maps through prioritiesList array to render last 7 entered
 
         const prioritiesList = this.state.prioritiesList.slice(0, 7).map(
             (data) =>             
@@ -116,13 +102,11 @@ class Priorities extends Component {
                     <button type="button" 
                         className="btn btn-secondary btn-sm "
                         onClick={this.handleSave}>Add to List</button>
-
-                    {/* // Renders list of 3 recently saved items on priorites list */}
-
+                    
                 <div className="your-thoughts">                        
                         <ul className="ul-Thoughts">
                         
-                        {prioritiesList}                            
+                            {prioritiesList}                            
 
                         </ul>
                         

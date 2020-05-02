@@ -39,7 +39,7 @@
 }
 
 .navDiv a {
-  background: #50738a;
+  background: #85c4ca;
   display: flex;  
   justify-content: center;
   color: white;
@@ -52,9 +52,21 @@
   text-decoration: none;
 }
 
+.about {
+  background-color: #f3f7fc;
+  color: rgb(70, 70, 70);  
+  margin-bottom: 0em; 
+  box-shadow: 0 4px 8px 0 rgba(99, 99, 99, 0.2), 0 6px 20px 0 rgba(134, 134, 134, 0.19);
+  padding: 2em 1.75em 1.25em 1.75em;
+ }
+
+ .about h1 {
+  padding-bottom: .5em;
+ }
+
 .navDiv a:hover,
 .navDiv .active {
-  background: #523b61;
+  background: #77558d;
   color: white;
 }
 
@@ -82,6 +94,10 @@ label {
 
 .btn-view {
   margin-left: 15px;
+}
+
+.form-group h4 {
+  padding-bottom: 1.25em;
 }
 
 .footerDiv {
@@ -152,7 +168,11 @@ label {
  }
 
  .your-thoughts h5 {
-  padding-bottom: 1.5em;
+  padding-bottom: 1.5em;  
+}
+
+.your-thoughts h3 {
+  padding-bottom: 1.5em; 
 }
 
  .ul-Thoughts {

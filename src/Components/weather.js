@@ -5,7 +5,6 @@ import sunshine from '../img/sunshine.png';
 import clouds from '../img/clouds.png';
 import rain from '../img/rain.png';
 import fewclouds from '../img/fewclouds.png';
-//import '../Components/enterapp.js';
 
 class Weather extends Component {
 
@@ -25,8 +24,7 @@ class Weather extends Component {
         this.apiPhoto();     
       }
 
-    // api data from https://openweathermap.org
-    // testing api - will save apikey in another hidden document
+    // api data from https://openweathermap.org    
 
     apiWeather = async (
         url = 'http://api.openweathermap.org/data/2.5/weather?q=Louisville&appid=' + process.env.REACT_APP_WEATHER_API_KEY
@@ -37,22 +35,22 @@ class Weather extends Component {
         this.setState({location: info.name});
         this.setState({outside: info.weather[0].main});
         this.setState({look: info.weather[0].description});
-        this.setSkyicon();        
-        //console.log(info);
-        //console.log(this.state.location);
+        this.setSkyicon();      
     };
+
+    // landscape photo renders as background of weather component using a random number generator to select from and array on the api
 
     apiPhoto = async (
         urlb = 'https://pixabay.com/api/?key=' + process.env.REACT_APP_PHOTO_API_KEY + '&q=calm+landscape&image_type=photo'
     ) => {        
         const results = await fetch(urlb);
         const infob = await results.json(); 
-        const indexB = Math.floor(Math.random() * 18);    
-        //console.log("index number: " + indexB);           
-        const urlbkg = infob.hits[indexB].webformatURL;          
-        //console.log(urlbkg);
+        const indexB = Math.floor(Math.random() * 18);                      
+        const urlbkg = infob.hits[indexB].webformatURL;        
         this.setState({bkgImage: {backgroundImage: "url(" + urlbkg + ")"}});     
     };
+
+    // toFahrenheit changes the celcius data provided by the api to fahrenheit
 
     toFahrenheit = (number, realnumber) => {
         const tempF = (number - 273.15) * 9/5 + 32;
@@ -61,22 +59,20 @@ class Weather extends Component {
         this.setState({realFeel: parseInt(tempR)})
     };
 
+    // selects which weather icon to display based on data from api
+
     setSkyicon = () => {
         if (this.state.look === "few clouds") {            
             this.setState({skyicon: fewclouds});
-        }  else if (this.state.look === "scattered clouds") {
-            //console.log("it is cloudy out");
+        }  else if (this.state.look === "scattered clouds") {            
             this.setState({skyicon: fewclouds});
-        } else if (this.state.outside === "Clouds") {
-            //console.log("it is cloudy out");
+        } else if (this.state.outside === "Clouds") {            
             this.setState({skyicon: clouds});
-        } else if (this.state.outside === "Rain") {
-            //console.log("it is rainy");
+        } else if (this.state.outside === "Rain") {            
             this.setState({skyicon: rain});
         } else
         // if (this.state.outside === "Clear") 
-            {
-            //console.log("Sky is not cloudy");
+            {            
             this.setState({skyicon: sunshine});
         } 
     };
@@ -86,8 +82,7 @@ class Weather extends Component {
             <div className="weather-bkg bkgApp" id="weatherid" style={this.state.bkgImage}>
             <h1 className="py-4">{this.state.location}</h1>
             <h4 className="realFeel">{this.state.look}</h4>
-            <img src={this.state.skyicon} alt="Weather"/>
-            {/* <img src="/img/clouds.png" alt="Weather"/> */}
+            <img src={this.state.skyicon} alt="Weather"/>            
             <h2>{this.state.tempnow}&deg;</h2>
             <h4 className="realFeel">Real Feel: {this.state.realFeel}&deg;</h4>            
          </div>

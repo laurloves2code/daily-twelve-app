@@ -5,12 +5,6 @@ import { NavLink } from 'react-router-dom';
 
 class Navbar extends Component {
 
-    state = {
-              
-    };    
-    
-        
-   
 
     render () {
         return (
