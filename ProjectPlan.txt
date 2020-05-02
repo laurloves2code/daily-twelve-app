@@ -1,5 +1,5 @@
 Lauren Cameron
-March 2020
+March - May 2020
 Tuesday Project Class
 
 PROJECT PLAN
@@ -10,34 +10,44 @@ App Name: Daily Twelve
 Taking 12 minutes at some point throughout the day to reflect can be refreshing and set the tone for the rest of the day.
 It will only take about 12 minutes to use this app daily.
 With this app, the user is greeted and encouraged with a motivational quote.
-Continue scrolling and the user is prompted to input thoughts of gratitude and three priority items to do for the day.
+Continue scrolling and the user is prompted to input thoughts of gratitude.
+Thoughts are stored until deleted. The user can view the thoughts log by selecting Thoughts from the navigation menu.
+Next, the user is able to create a to do list.
+Currently the 7 most recent priorites are rendered, but as items are marked done and removed, any others on the list will show.
 Finally, the Weather for day. The background image is pulled from an API to reflect the weather.
 
+
 ------- Technical Summary
+
 - HTML
 - CSS
-- Responsive UI
-- JavaScript 
 - Bootstrap
+- Responsive UI
+- JavaScript - 
 - ReactJS
 - React Router, (npm install --save react-router-dom)
 - npm, (npm install)
 - Local Storage using HTML5
-- API data
+- API data (lest below)
+
 
 ------- Features
-- User Greeting
-- Encouraging Bible verses
-- Gratitude List/To Do List
-- Weather *Image to reflect the weather. Example 80 degrees shows a sunshine image
+
+- Greeting
+- Encouraging Quote
+- Gratitude List Journal
+- To Do List
+- Weather with image icon to reflect the weather. Example 80 degrees shows a sunshine image
+
 
 ----- UI
-- dailyTwelvePreview.jpg - initial design
-- Home Page containts greeting, encouraging Bible verse, gratitude thoughts, to do list, daily weather.
-- Greeting examples: "Name, you're doing awesome!", "You got this, Name!", "Have a great day, Name!"
-- Encouraging Bible verse that changes each time the app is loaded/refreshed
+
+- \public\dailyTwelvePreview.jpg - initial design
+- Home Page containts footer greeting, encouraging quote, gratitude thoughts, to do list, daily weather.
+- Greeting examples: "You're doing awesome!", "You got this!", "Have a great day!"
+- Encouraging motivational quote of the day
 - About. Why this app? Benefits of documenting thoughts of gratitude.
-- APIs will be used to render the weather, verses and weather images.
+- APIs will be used to render the weather, quotes and weather/landscape images.
 - HTML5 local storage used to store gratitude and to do list entries.
 
 ------- Milestones
@@ -57,10 +67,29 @@ Finally, the Weather for day. The background image is pulled from an API to refl
 
 ------- APIs
 
-Weather Images - https://www.pexels.com/api/documentation/           
-Weather - https://openweathermap.org/current#cities
-Quotes - https://theysaidso.com/api/
-
-The API keys will be provided upon request.
+Weather Images - https://www.pixabay.com          
+Weather - https://openweathermap.org/
+Quotes - https://theysaidso.com/api/ (no api key required)
 
 
+------- Requirements and Steps to View Final App
+
+- Visit Repository on GitHub - https://github.com/laurloves2code/daily-twelve-app - Download Zip and Extract project folder to computer
+- Open Visual Studio Code or install on computer: https://code.visualstudio.com/download
+- install node.js - https://nodejs.org/dist/v12.16.3/node-v12.16.3-x64.msi
+- Open VS Code and open new terminal
+
+- In Command Terminal, ensure npm 6.13.4 and node.js 12.16.1 are installed using terminal commands:
+    node --version
+    npm -v
+- Type Command:
+    npm install
+- Before running app. Input API Keys as a string into the weather.js component file:    
+    \src\Components\Weather.js - insert Open Weather api key in line 32 replace 'process.env.REACT_APP_WEATHER_API_KEY' with key
+    \src\Components\Weather.js - insert Pixabay api key in line 46 replace 'process.env.REACT_APP_PHOTO_API_KEY' with key
+
+- Run React App using command:
+    npm start
+- This will open the project in the browser using localhost
+
+Thank you for viewing!

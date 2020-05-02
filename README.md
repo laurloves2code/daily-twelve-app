@@ -71,9 +71,6 @@ Weather Images - https://www.pixabay.com
 Weather - https://openweathermap.org/
 Quotes - https://theysaidso.com/api/ (no api key required)
 
-The API keys will be provided or if api is already available place in following locations:
-\src\Components\Weather.js - insert Open Weather api key in line 32 replace 'process.env.REACT_APP_WEATHER_API_KEY' with key
-\src\Components\Weather.js - insert Pixabay api key in line 46 replace 'process.env.REACT_APP_PHOTO_API_KEY' with key
 
 ------- Requirements and Steps to View Final App
 
@@ -81,25 +78,18 @@ The API keys will be provided or if api is already available place in following 
 - Open Visual Studio Code or install on computer: https://code.visualstudio.com/download
 - install node.js - https://nodejs.org/dist/v12.16.3/node-v12.16.3-x64.msi
 - Open VS Code and open new terminal
-- install npm using command: npm install
-- In Terminal, ensure npm 6.13.4 and node.js 12.16.1 are installed using terminal commands:
+
+- In Command Terminal, ensure npm 6.13.4 and node.js 12.16.1 are installed using terminal commands:
     node --version
     npm -v
-- Open Project folder in Visual Studio
-- Run React App using commands:
-    npm init react-app lc-app
-    cd lc-app
-- Install Bootstrap with command:
-    npm install bootstrap@3
-    npm start
-- This will open a New React App page in your browser with the react logo. 
-If this happens you are good to go to the next step to running the Daily Twelve App.  
-- In you computer's File Explorer, open the project folder. Move the files outside the lc-app folder into the lc-app folder.
-- Before running app. Input API Keys into the weather.js component file:
-    The API keys will be provided or if api is already available place in following locations:
+- Type Command:
+    npm install
+- Before running app. Input API Keys as a string into the weather.js component file:    
     \src\Components\Weather.js - insert Open Weather api key in line 32 replace 'process.env.REACT_APP_WEATHER_API_KEY' with key
     \src\Components\Weather.js - insert Pixabay api key in line 46 replace 'process.env.REACT_APP_PHOTO_API_KEY' with key
 
+- Run React App using command:
+    npm start
+- This will open the project in the browser using localhost
 
-
-
+Thank you for viewing!
