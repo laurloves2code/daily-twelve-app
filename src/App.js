@@ -14,7 +14,7 @@ import Gratitude from './Components/Gratitude.js';
 import GratitudeFull from './Components/GratitudeFull.js';
 import Priorities from './Components/Priorities.js';
 import CurrentTime from './Components/CurrentTime.js';
-import Weather from './Components/Weather.js';
+import Weather from './Components/weather.js';
 import Footer from './Components/Footer.js';
 
 

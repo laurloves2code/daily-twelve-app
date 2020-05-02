@@ -119,7 +119,7 @@ class Gratitude extends Component {
 
        // maps through savedThoughts array to render
 
-        const thoughtsList = this.state.savedThoughts.slice(0, 2).map(
+        const thoughtsList = this.state.savedThoughts.slice(0, 1).map(
             (data) =>             
             <li className="thoughts-list" key={data.message}><p>{data.message}</p>
             <button type="button" className= "xbtn" onClick={() => this.handleX(data)}>X</button>
@@ -127,7 +127,7 @@ class Gratitude extends Component {
             </li>
             );  
             
-            const thoughtsFullList = this.state.savedThoughts.slice(2, this.state.savedThoughts.length).map(
+            const thoughtsFullList = this.state.savedThoughts.slice(1, this.state.savedThoughts.length).map(
                 (data) =>             
                 <li className="thoughts-list" style={this.state.displayStyle} key={data.message}><p>{data.message}</p>
                 <button type="button" className= "xbtn" onClick={() => this.handleX(data)}>X</button>
@@ -164,7 +164,7 @@ class Gratitude extends Component {
                     {/* // Renders list of 3 recently saved gratitude thoughts */}
 
                 <div className="your-thoughts">
-                        <h5>Your Thoughts of Gratitude</h5>
+                        <h5>Today's Thought of Gratitude</h5>
                         <ul className="ul-Thoughts">
                         
                         {thoughtsList} 
