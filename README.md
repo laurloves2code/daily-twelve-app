@@ -77,7 +77,7 @@ Quotes - https://theysaidso.com/api/ (no api key required)
 - Visit Repository on GitHub - https://github.com/laurloves2code/daily-twelve-app - Download Zip and Extract project folder to computer
 - Open Visual Studio Code or install on computer: https://code.visualstudio.com/download
 - install node.js - https://nodejs.org/dist/v12.16.3/node-v12.16.3-x64.msi
-- Open VS Code and open new terminal
+- Open VS Code, Open downloaded project folder and open new terminal
 
 - In Command Terminal, ensure npm 6.13.4 and node.js 12.16.1 are installed using terminal commands:
     node --version
